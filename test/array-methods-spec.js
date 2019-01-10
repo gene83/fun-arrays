@@ -7,7 +7,9 @@ describe('Array Methods', function() {
   describe('hundredThousandairs', function() {
     it('should be an array with accounts from bankBalances that are greater than 100000', function() {
       arrayMethods.hundredThousandairs.should.have.length(93);
-      arrayMethods.hundredThousandairs.every(function (account){ return account.amount > 100000; }).should.be.true;
+      arrayMethods.hundredThousandairs.every(function(account) {
+        return account.amount > 100000;
+      }).should.be.true;
     });
   });
 
@@ -54,7 +56,19 @@ describe('Array Methods', function() {
     });
 
     it('should contain only abbreviations of states who have sums of amounts that are less than 1,000,000', function() {
-      arrayMethods.lowerSumStates.should.have.same.members([ 'MI', 'MD', 'IN', 'CA', 'MS', 'MT', 'MO', 'KY', 'AK', 'HI', 'ID' ]);
+      arrayMethods.lowerSumStates.should.have.same.members([
+        'MI',
+        'MD',
+        'IN',
+        'CA',
+        'MS',
+        'MT',
+        'MO',
+        'KY',
+        'AK',
+        'HI',
+        'ID'
+      ]);
     });
   });
 
