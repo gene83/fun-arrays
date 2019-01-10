@@ -77,9 +77,9 @@ var stateSums = bankBalances.reduce((o, current) => {
 var sumOfHighInterests = Object.keys(stateSums)
   .filter(state => !['WI', 'IL', 'WY', 'OH', 'GA', 'DE'].includes(state))
   .reduce((sum, c) => {
-    // if (Math.round(stateSums[c.state] * 0.189) > 50000) {
-    sum += Math.round(stateSums[c] * 0.189);
-    // }
+    if (Math.round(stateSums[c] * 0.189) > 50000) {
+      sum += Math.round(stateSums[c] * 0.189);
+    }
     return sum;
   }, 0);
 
