@@ -76,11 +76,11 @@ var stateSums = bankBalances.reduce((o, current) => {
 // use that array and statesums to find sumOfHighInterest
 var sumOfHighInterests = Object.keys(stateSums)
   .filter(state => !['WI', 'IL', 'WY', 'OH', 'GA', 'DE'].includes(state))
-  .reduce((bank, c) => {
+  .reduce((sum, c) => {
     // if (Math.round(stateSums[c.state] * 0.189) > 50000) {
-    bank += Math.round(stateSums[c] * 0.189);
+    sum += Math.round(stateSums[c] * 0.189);
     // }
-    return bank;
+    return sum;
   }, 0);
 
 /*
@@ -99,11 +99,11 @@ var lowerSumStates = bankBalances.reduce((arr, c) => {
   aggregate the sum of each state into one hash table
   `higherStateSums` should be the sum of all states with totals greater than 1,000,000
  */
-var higherStateSums = Object.keys(stateSums).reduce((bank, c) => {
+var higherStateSums = Object.keys(stateSums).reduce((sum, c) => {
   if (stateSums[c] > 1000000) {
-    bank += stateSums[c];
+    sum += stateSums[c];
   }
-  return bank;
+  return sum;
 }, 0);
 
 /*
